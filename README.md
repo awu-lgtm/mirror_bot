@@ -8,3 +8,4 @@ conda activate mirror_bot
 ```
 python gpt_webcam.py
 ```
+The folder that stores the log and images is printed in the terminal at the start of the program.
