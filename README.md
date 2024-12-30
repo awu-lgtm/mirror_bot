@@ -1,6 +1,6 @@
 ## Install
 ```
-conda env create -n mirror_bot -f environment.yml
+conda env create -n mirror_bot -f dependencies.yml
 conda activate mirror_bot
 ```
 
