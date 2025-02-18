@@ -8,15 +8,19 @@ class Camera():
         self.cap = cv2.VideoCapture(0)
         if not self.cap.isOpened():
             raise RuntimeError("Could not open webcam (index 0).")
-        self.frame_stack = deque(maxlen=stack_size)
+        self.stack_size = stack_size
         self.interval = interval
-        self.running = False
         self.logger = logger
-        self.last_frame = None
+        self.reset()
     
     def run(self):
         self.running = True
         self.read_frames()
+    
+    def reset(self):
+        self.frame_stack = deque(maxlen=self.stack_size)
+        self.running = False
+        self.last_frame = None
 
     def show_feed(self, frame):
         if frame is not None:

@@ -6,58 +6,63 @@ import base64
 import numpy as np
 from PIL import Image
 from prompts import prompt_with_history
+from utils import get_openai_client
+from env import MODEL
+from camera import Camera
 
 class Prompter(threading.Thread):
-    def __init__(self, cam, stack_size, logger, episode_path):
+    def __init__(self, cam: Camera=None, stack_size=None, logger=None, episode_path=None, create_prompt=prompt_with_history):
         super(Prompter, self).__init__()
         self.logger = logger
         self.stack_size = stack_size
-        self.history = []
         self.episode_path = episode_path
-        self.client = OpenAI(
-            api_key="***REMOVED***"
-        )
-        self.running = False
+        self.client = get_openai_client()
         self.cam = cam
+        self.create_prompt_fn = create_prompt
+        self.reset()
     
     def run(self):
         self.running = True
-        self.query_gpt(self.cam)
+        self.query_gpt()
+    
+    def reset(self):
+        self.history = []
+        self.running = False
+        if self.cam:
+            self.cam.reset()
 
-    def create_prompt(self, image_path):
-        prompt = prompt_with_history(self.stack_size)
+    def create_prompt(self, image_path=None, observation=None):
+        prompt = self.create_prompt_fn(self.stack_size)
         messages = [
             {"role": "system", "content": prompt["system"]},
         ]
         # messages += [{"role": "assistant", "content": prompt["examples"]}]
         messages += self.history
+
+        message_text = prompt["user"]
+        if observation is not None:
+            message_text += observation
         messages.append(
             {
                 "role": "user",
                 "content": [
                     {
                         "type": "text",
-                        "text": prompt["user"],
-                    },
-                    {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"data:image/png;base64,{self.encode_image(image_path)}",
-                            "detail": "high",
-                        },
+                        "text": message_text,
                     },
                 ],
             },
         )
-        # messages[-1]["content"] += [
-        #     {
-        #         "type": "image_url",
-        #         "image_url": {
-        #             "url": f"data:image/png;base64,{encode_image(image_path)}",
-        #             "detail": "high",
-        #         },
-        #     }
-        # ]
+        if image_path is not None:
+            messages[-1]["content"].append(
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/png;base64,{self.encode_image(image_path)}",
+                        "detail": "high",
+                    },
+                },
+            )
         return messages
 
 
@@ -70,7 +75,7 @@ class Prompter(threading.Thread):
 
     def call_gpt(self, prompt):
         response = self.client.chat.completions.create(
-            model="gpt-4o",
+            model=MODEL,
             messages=prompt,
             max_tokens=10000,
             temperature=1.0,
@@ -90,38 +95,48 @@ class Prompter(threading.Thread):
         stacked_image = np.hstack(frames)
         return Image.fromarray(cv2.cvtColor(stacked_image, cv2.COLOR_BGR2RGB))
 
-    def query_gpt_once(self, frame_stack, i):
+    def query_gpt_with_cam_once(self, i):
+        frame_stack = self.cam.frame_stack
         if frame_stack and len(frame_stack) == self.stack_size:
             stacked_image = self.stack_frames(frame_stack)
             # Save or display the stacked image if needed (not displayed here)
             image_path = f"{self.episode_path}/image_stack_{i}.png"
             stacked_image.save(image_path)
 
-            # Prompt GPT with a description
-            self.logger.info("Prompting...")
-            prompt = self.create_prompt(image_path)
-            self.log_prompt(prompt, image_path)
-            start_time = time.perf_counter()
-            gpt_response = self.call_gpt(prompt)
-            end_time = time.perf_counter()
-            self.logger.info(
-                f"GPT-4 Response: {gpt_response}, time_elasped: {'%.3f'%(end_time - start_time)}s"
-            )
-            response = {
-                    "role": "assistant",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": gpt_response.content,
-                        }
-                    ],
-                }
-            self.history.append(response)
-            return response
+            prompt, response, time = self.query_gpt_once(image_path)
 
-    def query_gpt(self, cam):
+            if self.logger:
+                self.log_prompt(prompt, image_path)
+                self.logger.info(
+                    f"GPT-4 Response: {response['content'][0]['text']}, time_elasped: {'%.3f'%(time)}s"
+                )
+            return response
+    
+    def query_gpt_once(self, image_path=None, observation=None):
+        prompt = self.create_prompt(image_path, observation)
+        start_time = time.perf_counter()
+        gpt_response = self.call_gpt(prompt)
+        end_time = time.perf_counter()
+        response = {
+                "role": "assistant",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": gpt_response.content,
+                    }
+                ],
+            }
+        self.history.append(response)
+        return prompt, response, start_time - end_time
+
+    def query_gpt(self):
         i = 0
         while self.running:
-            response = self.query_gpt_once(cam.frame_stack, i)
+            response = self.query_gpt_once(i)
             if response is not None:
                 i += 1
+
+    def test(self, observations):
+        for observation in observations:
+            print(observation)
+            self.query_gpt_once(observation=observation)
