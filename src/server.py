@@ -45,7 +45,7 @@ def run_server():
 
 if __name__ == "__main__":
     cam = Camera(logger, stack_size, interval)
-    prompter = Prompter(stack_size, logger, episode_path, cam)
+    prompter = Prompter(cam, stack_size, logger, episode_path)
 
     prompter.start()
     flask_thread = threading.Thread(target=run_server, daemon=True)

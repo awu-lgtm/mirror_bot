@@ -127,12 +127,12 @@ class Prompter(threading.Thread):
                 ],
             }
         self.history.append(response)
-        return prompt, response, start_time - end_time
+        return prompt, response, end_time - start_time
 
     def query_gpt(self):
         i = 0
         while self.running:
-            response = self.query_gpt_once(i)
+            response = self.query_gpt_with_cam_once(i)
             if response is not None:
                 i += 1
 

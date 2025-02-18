@@ -1,11 +1,11 @@
-def prompt_social_interaction(stack_size, observation=None):
+def prompt_social_interaction(stack_size):
     return {
         "system": "You are an insightful assistant that interprets visual body language cues and conversational intentions based on descriptions or provided image data. Give a short, definite answer.",
         "user": f"This is a frame stack of the last {stack_size} frames in a video. Do those two people have intention to initiate a conversation?",
     }
 
 
-def prompt_with_history(stack_size, observation=None):
+def prompt_with_history(stack_size):
     return {
         "system": "You are a robot assistant that interprets the visual body language cues and conversational intentions of a pair of people. \
             You will be provided a history of the same trajectory of your past responses and a current image of the faces of the participants. \
@@ -25,7 +25,7 @@ def prompt_with_history(stack_size, observation=None):
         "user": f"This is a frame stack of the last {stack_size} frames in a video. What action do you take?",
     }
 
-def prompt_with_history(stack_size, observation=None):
+def prompt_with_history_text(stack_size):
     return {
         "system": "You are a robot assistant that interprets the visual body language cues and conversational intentions of a pair of people. \
             You will be provided a history of the same trajectory of your past responses and a current image of the faces of the participants. \
@@ -45,7 +45,7 @@ def prompt_with_history(stack_size, observation=None):
         "user": f"This is a description of actions observed. What action do you take?",
     }
 
-def assistant_prompt(stack_size, observation=None):
+def assistant_prompt(stack_size):
     return {
         "system": "You are a robot assistant that interprets the visual body language cues and conversational intentions of a pair of people. \
             You will be provided a current stacked image of the faces of the participants sampled uniformly from the last few seconds. \
@@ -65,7 +65,7 @@ def assistant_prompt(stack_size, observation=None):
         "user": f"This is a frame stack of the last {stack_size} frames in a video. What action do you take?",
     }
 
-def assistant_prompt(stack_size, observation):
+def assistant_prompt(stack_size):
     return {
         "system": "You are a robot assistant that interprets the visual body language cues and conversational intentions of a pair of people. \
             You will be provided a current stacked image of the faces of the participants sampled uniformly from the last few seconds. \
