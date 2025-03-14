@@ -9,6 +9,7 @@ from query_gpt import Prompter
 from flask import Flask, jsonify, request
 import threading
 from flask_cors import CORS
+import json
 
 # Configure logging
 logging.config.dictConfig(
@@ -36,9 +37,24 @@ interval = time_per_stack / stack_size
 app = Flask(__name__)
 CORS(app)
 
+def format_analysis(state):
+    text = state['content'][0]['text']
+    formatted_text = json.loads(text[text.find('{'):text.find('}') + 1])
+    return formatted_text
+
 @app.route('/analysis', methods=['GET'])
-def capture_and_analyze():
-    return jsonify(prompter.history[-1])
+def get_analysis():
+    if len(prompter.history) == 0:
+        return jsonify({})
+    analysis = format_analysis(prompter.history[-1])
+    return jsonify(analysis)
+
+@app.route('/action', methods=['GET'])
+def get_action():
+    if len(prompter.history) == 0:
+        return jsonify({})
+    action = {"action": format_analysis(prompter.history[-1])['action']}
+    return jsonify(action)
 
 def run_server():
     app.run(port=5000)

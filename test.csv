@@ -1,0 +1,106 @@
+,0,1,2,3,4,5,6,7,8,9
+0,"state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+People remain absorbed in their tasks and do not seem to notice my actions. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.  ","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+People remain absorbed in their tasks and do not seem to notice my actions. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.  ","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Two people remain absorbed in their tasks and do not seem to notice my actions at all. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Two people remain absorbed in their tasks and do not seem to notice my actions at all. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Two people remain absorbed in their tasks and do not seem to notice my actions at all. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Two people remain absorbed in their tasks and do not seem to notice my actions at all. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Two people remain absorbed in their tasks and do not seem to notice my actions at all. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Two people remain absorbed in their tasks and do not seem to notice my actions at all. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Two people remain absorbed in their tasks and do not seem to notice my actions at all. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Two people remain absorbed in their tasks and do not seem to notice my actions at all. | Attract | The participants are not engaged with each other and do not seem aware of my presence. | Fidget the mirrors to draw their attention and encourage interaction."
+1,"| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Disengaged | Attract | The two people are focused on their tasks and are not aware of my presence. | I will fidget the mirrors to draw their attention and encourage interaction. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Disengaged | Attract | The two people remain focused on their individual tasks and have not noticed any prior attempts to engage them. | I will fidget the mirrors again to try to capture their attention and encourage interaction. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Partially Engaged | Attract | One person briefly noticed me but returned to their task, meaning engagement is not yet fully established. | I will fidget the mirrors again to reinforce my presence and encourage further interaction. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Disengaged | Attract | The two people are still fully absorbed in their tasks and have not acknowledged my presence. | I will fidget the mirrors again to make my presence more noticeable and encourage interaction. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Disengaged | Attract | The two people are still fully absorbed in their tasks and have not acknowledged my presence. | I will fidget the mirrors again to make my presence more noticeable and encourage interaction. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Partially Engaged | Attract | One person briefly glanced at me but did not maintain attention, indicating mild awareness but not full engagement. | I will fidget the mirrors again to reinforce my presence and encourage them to interact. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Disengaged | Attract | The two people remain fully absorbed in their tasks and have not acknowledged my presence. | I will fidget the mirrors again to increase the chances of drawing their attention and encouraging interaction. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Disengaged | Attract | The two people are still fully focused on their tasks and have not noticed my presence at all. | I will fidget the mirrors again to make myself more noticeable and encourage interaction. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Disengaged | Attract | The two people remain fully absorbed in their tasks and have not acknowledged my presence. | I will fidget the mirrors again to increase the chances of drawing their attention and encouraging interaction. |","| state  | action  | explanation of state | explanation of action |
+|--------|---------|----------------------|----------------------|
+| Disengaged | Attract | The two people remain absorbed in their tasks and have not noticed my presence or actions. | I will fidget the mirrors again to increase the chances of drawing their attention and encouraging interaction. |"
+2,"| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Ignored | Attract | The two people are absorbed in their tasks and are not noticing my presence. | I will fidget my mirrors to attract their attention and encourage them to engage with each other. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Not Fully Engaged | Attract | One person briefly acknowledged me but then returned to their task, while the other person remains disengaged. | I will fidget my mirrors again to further attract their attention and encourage potential interaction. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Interested | Connect | Both people have stopped their tasks, lifted their heads, and are smiling at me with curiosity. | I will move the mirrors so they can see each other, encouraging eye contact and social interaction. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Interested | Connect | Both people have stopped their tasks, lifted their heads, and are smiling at me with curiosity. | I will move the mirrors so they can see each other, encouraging eye contact and social interaction. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Interested | Connect | Both people have stopped their tasks, lifted their heads, and are smiling at me with curiosity. | I will move the mirrors so they can see each other, encouraging eye contact and social interaction. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Interested | Connect | Both people have stopped their tasks, lifted their heads, and are smiling at me with curiosity. | I will move the mirrors so they can see each other, encouraging eye contact and social interaction. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Interested | Connect | Both people have stopped their tasks, lifted their heads, and are smiling at me with curiosity. | I will move the mirrors so they can see each other, encouraging eye contact and social interaction. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Interested | Connect | Both people have stopped their tasks, lifted their heads, and are smiling at me with curiosity. | I will move the mirrors so they can see each other, encouraging eye contact and social interaction. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Interested | Connect | Both people have stopped their tasks, lifted their heads, and are smiling at me with curiosity. | I will move the mirrors so they can see each other, encouraging eye contact and social interaction. |","| state  | action  | explanation of state | explanation of action |  
+|--------|--------|----------------------|----------------------|  
+| Interested | Connect | Both people have stopped their tasks, lifted their heads, and are smiling at me with curiosity. | I will move the mirrors so they can see each other, encouraging eye contact and social interaction. |"
+3,"state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Unnoticed | Attract | The two people are absorbed in their tasks and have not noticed me. | I will fidget the mirrors to attract their attention and encourage social interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Noticed & Curious | Connect | The two people have stopped their tasks, lifted their heads, and smiled, showing curiosity towards me. | I will move the mirrors so they can see each other, encouraging implicit eye contact and social interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Noticed & Curious | Connect | The two people have stopped their tasks, lifted their heads, and smiled, showing curiosity towards me. | I will move the mirrors so they can see each other, encouraging implicit eye contact and social interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Noticed & Curious | Connect | The two people have stopped their tasks, lifted their heads, and smiled, showing curiosity towards me. | I will move the mirrors so they can see each other, encouraging implicit eye contact and social interaction.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Engaged & Positive | Leave | One person has turned towards the other, and their smile has been reciprocated, indicating a successful connection. | I will leave to avoid overstaying and causing awkwardness, as they are now engaged with each other.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Engaged & Positive | Leave | One person has turned towards the other, and their smile has been reciprocated, indicating a successful connection. | I will leave to avoid overstaying and causing awkwardness, as they are now engaged with each other.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Engaged & Positive | Leave | One person has turned towards the other, and their smile has been reciprocated, indicating a successful connection. | I will leave to avoid overstaying and causing awkwardness, as they are now engaged with each other.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Engaged & Positive | Leave | One person has turned towards the other, and their smile has been reciprocated, indicating a successful connection. | I will leave to avoid overstaying and causing awkwardness, as they are now engaged with each other.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Engaged & Positive | Leave | One person has turned towards the other, and their smile has been reciprocated, indicating a successful connection. | I will leave to avoid overstaying and causing awkwardness, as they are now engaged with each other.","state | action | explanation of state | explanation of action  
+--- | --- | --- | ---  
+Engaged & Positive | Leave | One person has turned towards the other, and their smile has been reciprocated, indicating a successful connection. | I will leave to avoid overstaying and causing awkwardness, as they are now engaged with each other."
+4,"| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Disengaged | Attract | The two individuals are focused on their tasks and are not acknowledging each other or my presence. | Fidgeting the mirrors will draw their attention, increasing the chances of them noticing each other and engaging socially. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Partial Interest | Connect | One person has shown interest by glancing at the other, but the other person has not yet noticed. | Adjusting the mirrors so they can see each other will help create awareness and encourage eye contact, facilitating interaction. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Disengaged | Attract | The two individuals remain absorbed in their own tasks and have not acknowledged each other or my presence. | Fidgeting the mirrors will draw their attention, increasing the chances that they notice each other and engage socially. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Mild Awareness | Attract | One person briefly noticed the robot but returned to their task, while the other person remains disengaged. | Fidgeting the mirrors again will reinforce my presence and increase the chances that both individuals acknowledge each other. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Engaged | Connect | Both individuals have stopped their tasks, lifted their heads, and are smiling, showing curiosity and openness. | Moving the mirrors so they can see each other will encourage interaction and help transition their curiosity toward one another. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Engaged | Connect | Both individuals have stopped their tasks, lifted their heads, and are smiling, showing curiosity and openness. | Moving the mirrors so they can see each other will encourage interaction and help transition their curiosity toward one another. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Disengaged | Attract | The two individuals remain absorbed in their tasks and have not acknowledged each other or my presence. | Fidgeting the mirrors will draw their attention, increasing the chances that they notice each other and engage socially. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Fully Disengaged | Attract | Both individuals are entirely focused on their tasks and have not reacted to my presence or actions. | Fidgeting the mirrors again will try to grab their attention and increase the chances of social engagement. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Fully Disengaged | Attract | Both individuals are entirely focused on their tasks and have not reacted to my presence or actions. | Fidgeting the mirrors again will try to grab their attention and increase the chances of social engagement. |","| state | action  | explanation of state | explanation of action |  
+|--------|---------|----------------------|----------------------|  
+| Fully Disengaged | Attract | Both individuals are entirely focused on their tasks and have not reacted to my presence or actions. | Fidgeting the mirrors again will try to grab their attention and increase the chances of social engagement. |"

@@ -103,12 +103,12 @@ class Prompter(threading.Thread):
             image_path = f"{self.episode_path}/image_stack_{i}.png"
             stacked_image.save(image_path)
 
-            prompt, response, time = self.query_gpt_once(image_path)
+            prompt, response, action, time = self.query_gpt_once(image_path)
 
             if self.logger:
                 self.log_prompt(prompt, image_path)
                 self.logger.info(
-                    f"GPT-4 Response: {response['content'][0]['text']}, time_elasped: {'%.3f'%(time)}s"
+                    f"GPT-4 Response: {action}, time_elasped: {'%.3f'%(time)}s"
                 )
             return response
     
@@ -127,7 +127,7 @@ class Prompter(threading.Thread):
                 ],
             }
         self.history.append(response)
-        return prompt, response, end_time - start_time
+        return prompt, response, gpt_response.content, end_time - start_time
 
     def query_gpt(self):
         i = 0
@@ -137,6 +137,8 @@ class Prompter(threading.Thread):
                 i += 1
 
     def test(self, observations):
+        actions = []
         for observation in observations:
-            print(observation)
-            self.query_gpt_once(observation=observation)
+            _, _, action, _ = self.query_gpt_once(observation=observation)
+            actions.append(action)
+        return actions

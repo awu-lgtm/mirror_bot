@@ -15,11 +15,16 @@ def prompt_with_history(stack_size):
             The idea is if they see each other in the mirror, then they will have implicit eye contact which will help faciliate social interaction. \
             Only leave if you think your presence will cause awkwardness. Attract before leaving. \
             These are the following actions: \
-            (1) Attract to fidget your mirrors to attract the people's attention. \
-            (2) Leave to leave \
-            (3) Connect to move the mirrors such that the two people can see each other in the mirror. \
-            Output your answer as a table in the following format: \
-            state | action | explanation of state | explanation of action \
+            1 - Both mirrors look to the left person \
+            2 - Both mirrors look to the right person \
+            3 - The left mirror will only reflect the left person, the right mirror will connect both people's gazes \
+            4 - The left mirror will connect both people's gazes, the right mirror will only reflect the right person \
+            5 - The mirror looks down \
+            6 - The mirror will nod up and down (first parameter [bool] - if true, nod the right mirror. second parameter [bool] - if true, nod the left mirror. third parameter [int] - how long the mirror will nod for) \
+            7 - The mirror will pan its head left and right (first parameter [bool] - if true, nod the right mirror. second parameter [bool] - if true, nod the left mirror. third parameter [int] - how long the mirror will nod for) \
+            0 - The mirror will return to default position \
+            After any reasoning, output your final answer as the json with format. For example,\
+            {\"reasoning\": insert reasoning here, \"action\": action number here, \"state\": insert state here}\
             ",
         "examples": "example 1",
         "user": f"This is a frame stack of the last {stack_size} frames in a video. What action do you take?",
@@ -78,8 +83,10 @@ def assistant_prompt(stack_size):
             (1) Attract to fidget your mirrors to attract the people's attention. \
             (2) Leave to leave \
             (3) Connect to move the mirrors such that the two people can see each other in the mirror. \
-            Output your answer as a table in the following format: \
-            state | action | explanation of state | explanation of action \
+            Output your answer as three lines in the following format \
+            reasoning: insert reasoning here\
+            state: insert state here\
+            action: insert action here\
             ",
         "examples": "example 1",
         "user": f"This is a frame stack of the last {stack_size} frames in a video. What action do you take?",

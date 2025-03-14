@@ -13,8 +13,10 @@ if __name__ == "__main__":
     replace_observations(observation_prompts, sequence)
     prompter = Prompter()
 
-    prompter.start()
-    for row in sequence.iterrows():
-        prompter.test(list(row[1]))
-        print(prompter.history)
+    actions = []
+    for i, row in sequence.iterrows():
+        action = prompter.test(list(row))
         prompter.reset()
+        actions.append(pd.Series(action, name=f"a{i}"))
+    actions = pd.DataFrame(actions)
+    actions.to_csv("test.csv")
